@@ -24,9 +24,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # URL=input("Enter a valid URL of the product homepage Amazon:");
 URL=sys.argv[1]
 chrome_options=webdriver.ChromeOptions()
-# chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--headless')
-# chrome_options.add_argument('--disable-dev-shm-usage')
 driver = webdriver.Chrome('chromedriver',options=chrome_options)
 
 
@@ -138,9 +136,6 @@ for i in range(len(clean_reviews)):
 positive = (positive*100)/len(clean_reviews);
 negative = (negative*100)/len(clean_reviews);
 neutral = (neutral*100)/len(clean_reviews);
-
-
-
 
 final_data = {
 	"product_title":product_title,
