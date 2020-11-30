@@ -4,6 +4,7 @@ import {
 import './App.css';
 import HomePage from './components/organisms/homePage';
 import ProductPage from './components/organisms/productsPage';
+import ReviewPage from './components/organisms/reviewPage';
 import Footer from './components/templates/footer';
 import CustomNavbar from './components/templates/navbar';
 
@@ -14,8 +15,8 @@ function App() {
         <CustomNavbar />
           <Switch>
             <Route exact path="/" component = {HomePage}/>
-            <Route path="/search_amazon" component = {ProductPage}/>
-            <Route path="/product_review" component = {()=><h1>product_review</h1>}/>
+            <Route path="/products" component = {ProductPage}/>
+            <Route path="/review" component = {ReviewPage}/>
           </Switch>
         <Footer />
       </div>
