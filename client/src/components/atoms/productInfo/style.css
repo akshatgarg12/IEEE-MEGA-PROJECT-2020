@@ -1,0 +1,11 @@
+.product-info{
+  padding: 10px;
+  margin: auto;
+  width: 90%;
+}
+
+@media screen and (max-width:990px){
+  .product-info{
+    text-align: center;
+  }
+}

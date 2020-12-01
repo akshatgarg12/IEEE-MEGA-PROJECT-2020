@@ -1,0 +1,20 @@
+[
+  {
+    "title":"negative",
+    "text":"negative sentiments",
+    "color":"danger",
+    "value":"26"
+  },
+  {
+    "title":"positive",
+    "text":"positive sentiments",
+    "color":"success",
+    "value":"24"
+  },
+  {
+    "title":"neutral",
+    "text":"neutral sentiments",
+    "color":"info",
+    "value":"50"
+  }
+]
