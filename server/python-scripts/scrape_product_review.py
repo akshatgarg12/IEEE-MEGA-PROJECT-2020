@@ -38,9 +38,12 @@ try:
 	product_image = product_image.get_attribute('src')
 	see_all_reviews.click();
 except:
-	print("Invalid URL")
-	driver.quit()
-	sys.exit()
+  error = json.dumps({
+    "error":"invalid url"
+  })
+  print(error)
+  driver.quit()
+  sys.exit()
 
 reviews = []
 while True and driver:
@@ -138,13 +141,31 @@ negative = (negative*100)/len(clean_reviews);
 neutral = (neutral*100)/len(clean_reviews);
 
 final_data = {
-	"product_title":product_title,
-	"product_image":product_image,
+	"title":product_title,
+	"img":product_image,
 	"total_reviews":len(clean_reviews),
 	"words_frequency":fdist.most_common(10),
-  "positive_sentiment":positive,
-  "negative_sentiment":negative,
-  "neutral_sentiment":neutral
+  "largest_review":largest_review,
+  "score":[   
+      {
+        "title":"negative",
+        "text":"negative sentiments",
+        "color":"danger",
+        "value":negative
+      },
+      {
+        "title":"positive",
+        "text":"positive sentiments",
+        "color":"success",
+        "value":positive
+      },
+      {
+        "title":"neutral",
+        "text":"neutral sentiments",
+        "color":"info",
+        "value":neutral
+      }
+  ]
 }
 
 final_data_json = json.dumps(final_data)

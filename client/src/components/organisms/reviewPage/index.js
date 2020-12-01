@@ -1,24 +1,27 @@
 import ProductDescription from "../../molecules/productDescription";
 import {Container, Row, Col} from 'reactstrap'
 import SentimentScore from "../../molecules/sentimentScore";
-import SentimentData from './data/sentiment.json';
-import ProductData from './data/product.json';
 import ReviewBox from "../../atoms/reviewBox";
 import Heading from "../../atoms/heading";
 import './style.css';
-const ReviewPage = () => {
+
+
+const ReviewPage = (props) => {
+  const productData = props.location.state.product
+  console.log(productData);
+
   return (
     <Container className="review-page">
       <Row sm="1" md="1" lg="1">
         <Col>
           <ProductDescription 
-            product={ProductData}
+            product={productData}
           />
           <Heading 
             text="Longest Review"
           />
           <ReviewBox 
-            review={ProductData.largest_review}
+            review={productData.largest_review}
           />
         </Col>
         
@@ -27,7 +30,7 @@ const ReviewPage = () => {
             text="Sentiment Analysis on reviews"
           />
         <SentimentScore 
-          scores = {SentimentData}
+          scores = {productData.score}
         />
         </Col>
       </Row>

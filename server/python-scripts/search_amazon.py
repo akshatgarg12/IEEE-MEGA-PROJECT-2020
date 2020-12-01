@@ -67,7 +67,10 @@ def scrape(url):
     r = requests.get(url, headers=headers)
     # if the request is denied
     if r.status_code > 500:
-        print('invalid url')
+        error = json.dumps({
+        "error":"invalid url"
+        })
+        print(error)
 
     return e.extract(r.text)
 
@@ -77,7 +80,7 @@ def scrape(url):
 data_extracted = []
 
 # calling the fn
-search_amazon(user_input);
+search_amazon(user_input)
 
 
 for url in url_list:
@@ -88,5 +91,6 @@ for url in url_list:
             data_extracted.append(product)
             
 
-print(data_extracted);        
+products = json.dumps(data_extracted)
+print(products);        
 

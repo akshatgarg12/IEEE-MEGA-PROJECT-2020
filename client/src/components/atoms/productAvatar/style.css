@@ -7,5 +7,5 @@
   width: 350px;
   margin: auto;
   border-radius: 10px;
-  object-fit: fill;
+  object-fit: contain;
 }

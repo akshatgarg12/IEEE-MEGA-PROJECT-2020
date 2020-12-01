@@ -7,7 +7,7 @@ const ProductInfo = ({product}) => {
       <h3>{product.title}</h3>
       <p>{product.description}</p>
       <h4>{product.price}</h4>
-      <Button color="info">Purchase</Button>
+      <Button color="info" href={product.url}>Purchase</Button>
     </div>
   );
 }
