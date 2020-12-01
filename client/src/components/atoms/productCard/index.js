@@ -8,13 +8,13 @@ const ProductCard = ({product, onClick}) => {
   return (
     <div className="product-card">
       <Card color="faded">
-        <CardImg top width="100%" src={product.img} alt="product-img"/>
+        <CardImg top src={product.images} className="product-img" alt="product-img"/>
         <CardBody>
-          <CardTitle tag="h5">{product.name}</CardTitle>
+          <CardTitle tag="h5">{product.title}</CardTitle>
 
           <CardSubtitle tag="h6" className="mb-2 text-muted">{product.price}</CardSubtitle>
           
-          <CardText>{product.description}</CardText>
+          <CardText>total reviews: {product.reviews}</CardText>
 
           <div className="row-flex">
             <Button color="info" onClick={onClick}>Analyse</Button>

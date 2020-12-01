@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import SearchForm from '../SearchForm';
 import {useHistory} from 'react-router-dom';
-import axios from 'axios';
+
 import LoadingSpinner from '../../atoms/loadingSpinner';
+import PostHandler from '../../../util/postHandler';
 
 const URLSearchForm = () => {
   const [url, setURL] = useState('');
@@ -10,24 +11,10 @@ const URLSearchForm = () => {
   const history = useHistory();
   const SubmitHandler = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    console.log(url);
-    const response = await axios.post('http://localhost:5000/api/product_review',{
-      url:url
-    })
-    if(response.status === 200){
-      console.log(response.data);
-      setLoading(false);
-      if(response.data.error){
-        return;
-      }
-      return history.push({pathname:'/review', state:{"product":{...response.data, url}}});
-    }
-    else{
-      setLoading(false);
-      console.log("error occured");
-    }
-    
+    const response = await PostHandler(setLoading,'product_review',{url});
+    if(response){
+      return history.push({pathname:'/review', state:{"product":{...response, url}}});
+    }else return;
   }
   if(loading){
     return <LoadingSpinner />
