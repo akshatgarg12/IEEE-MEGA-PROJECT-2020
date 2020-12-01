@@ -1,0 +1,6 @@
+.review-box{
+  overflow-y: scroll;
+  width: 80%;
+  max-height: 300px;
+  margin: 20px auto;
+}

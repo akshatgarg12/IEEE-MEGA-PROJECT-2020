@@ -1,0 +1,11 @@
+.product-avatar{
+  padding: 10px;
+  text-align: center;
+}
+.product-avatar img {
+  height:250px;
+  width: 350px;
+  margin: auto;
+  border-radius: 10px;
+  object-fit: fill;
+}
