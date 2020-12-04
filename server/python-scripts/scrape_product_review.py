@@ -56,7 +56,7 @@ while True and driver:
       continue
     for i in range(len(spans)):
       reviews.append(spans[i].getText())
-    if len(reviews)>1000:
+    if len(reviews)>500:
       break
     try:
       next_page=WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.CSS_SELECTOR,'#cm_cr-pagination_bar>ul>li.a-last>a')))
@@ -94,8 +94,8 @@ clean_reviews=[]
 # converting all the relevant reviews to a single string
 for i in range(len(reviews)):
 	if i%2:
-		clean_reviews.append(reviews[i].lower())
-		review_string = " ".join([review_string, reviews[i].lower()]) 
+		clean_reviews.append(reviews[i])
+		review_string = " ".join([review_string, reviews[i]]) 
 
 
 # tokenizing words	
@@ -119,8 +119,6 @@ largest_review = ""
 for r in clean_reviews:
 	if len(r) > len(largest_review):
 		largest_review = r
-
-
 
 
 classifier=SentimentIntensityAnalyzer()

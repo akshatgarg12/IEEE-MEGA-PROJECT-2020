@@ -5,4 +5,6 @@
 
 .product-img{
   height:300px;
+  object-fit: contain;
+  padding: 10px;
 }
