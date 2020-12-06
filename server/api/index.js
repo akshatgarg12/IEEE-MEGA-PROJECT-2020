@@ -4,7 +4,7 @@ const runPythonScript = require('../util/runPythonScript')
 
 router.post('/product_review', (req,res)=>{
   const {url} = req.body;
-  runPythonScript(url,res,'scrape_product_review_new.py')
+  runPythonScript(url,res,'scrape_product_review_3.py')
 });
 
 router.post('/search_amazon', (req,res)=>{
