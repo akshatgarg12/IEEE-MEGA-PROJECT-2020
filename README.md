@@ -8,10 +8,10 @@ Therefore this web App makes the review analysis of products easy by using autom
 
 # 🛠 Tech Stack
 
-1. React JS with bootstrap on the frontend
-2. Node JS express API
-3. Python for web scrapping and sentiment analysis, with beautiful soup and vaderSentiment
-4. Redis DB for server side caching
+- React JS with bootstrap on the frontend
+- Node JS express API
+- Python for web scrapping and sentiment analysis, with beautiful soup and vaderSentiment
+- Redis DB for server side caching
 
 # 🐳 Functionality
 > user can paste the url of the product homepage and will get the review analysis of it
