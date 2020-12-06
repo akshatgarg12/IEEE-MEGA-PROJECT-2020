@@ -1,15 +1,16 @@
 const router = require('express').Router();
 const runPythonScript = require('../util/runPythonScript')
+const cache  = require('../middlewares/cache')
 
 
-router.post('/product_review', (req,res)=>{
+router.post('/product_review',cache,(req,res)=>{
   const {url} = req.body;
-  runPythonScript(url,res,'scrape_product_review_new.py')
+  runPythonScript(url,req,res,'scrape_product_review_3.py')
 });
 
-router.post('/search_amazon', (req,res)=>{
+router.post('/search_amazon',cache,(req,res)=>{
   const {product} = req.body;
-  runPythonScript(product,res,'search_amazon.py')
+  runPythonScript(product,req,res,'search_amazon.py')
 });
 
 

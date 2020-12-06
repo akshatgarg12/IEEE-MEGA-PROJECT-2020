@@ -1,0 +1,13 @@
+name:
+    css: '#productTitle'
+    type: Text
+price:
+    css: '#priceblock_saleprice'
+    type: Text
+images:
+    css: '#landingImage'
+    type: Attribute
+    attribute: data-a-dynamic-image
+rev_link:
+    css: '.a-link-emphasis'
+    type: Link
